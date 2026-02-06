@@ -39,22 +39,21 @@ const NavBar = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 50,
-    marginHorizontal: 15,
     borderRadius: 15,
     padding: 15,
-    height: 350,
   },
 
 image: {
-    flex: 1,
     justifyContent: 'center',
-    padding: 20,
-    alignItems: 'center'
+    padding: 10,
+    alignItems: 'center',
+    height: 500
   },
 
   card: {
     backgroundColor: 'rgba(255,255,255,0.85)',
     padding: 20,
+    marginTop: 50,
     borderRadius: 12,
     width: '95%',
     elevation: 5,
@@ -65,7 +64,7 @@ image: {
   button: {
     flexDirection: 'column',
     marginTop: 15,
-    alignItems: 'center'
+    alignItems: 'start'
   },
 
   shopbtn: {
