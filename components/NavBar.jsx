@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 
 const NavBar = () => {
@@ -38,6 +38,9 @@ const NavBar = () => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 50,
+    marginHorizontal: 15,
+    borderRadius: 15,
     padding: 15,
     height: 350,
   },
@@ -45,32 +48,36 @@ const styles = StyleSheet.create({
 image: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20
+    padding: 20,
+    alignItems: 'center'
   },
 
   card: {
     backgroundColor: 'rgba(255,255,255,0.85)',
-    padding: 15,
+    padding: 20,
     borderRadius: 12,
-    width: '85%',
+    width: '95%',
     elevation: 5,
     shadowColor: '#000',
     shadowOpacity: 0.2
   },
 
   button: {
-    flexDirection: 'row',
+    flexDirection: 'column',
+    marginTop: 15,
+    alignItems: 'center'
   },
 
   shopbtn: {
-    backgroundColor: '#000',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5
+    backgroundColor: '#ffffff',
+    paddingVertical: 17,
+    width: '70%',
+    alignItems: 'center',
+    borderRadius: 10
   },
 
   shopText: {
-    color: '#fff',
+    color: '#000000',
   fontWeight: 'bold'
 },
 
@@ -83,7 +90,8 @@ exploreText: {
   explorebtn: {
     backgroundColor: 'rgba(224, 223, 223, 0.7)',
     paddingVertical: 17,
-    paddingHorizontal: 35,
+    width: '60%',
+    alignItems: 'center',
     borderRadius: 10,
     shadowColor: '#000',
     borderWidth: 1,
@@ -98,7 +106,8 @@ exploreText: {
   },
 
   description: {
-    fontSize: 16,
+    color: '#fff',
+    fontSize: 14,
     fontWeight: '500',
     marginVertical: 8
   },

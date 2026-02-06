@@ -1,6 +1,7 @@
-import { StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native'; // Fixed typo here
+import { StyleSheet, ScrollView, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from './components/Header';
-import NavBar from './components/NavBar';
+import NavBar from './components/navBar';
 import ShopCards from './components/ShopCards';
 
 export default function App() {

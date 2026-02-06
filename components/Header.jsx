@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Pressable, View, TextInput, TouchableOpacity, Dimensions } from'react-native';
+import {Image, StyleSheet, Pressable, View, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import {Search, User, ShoppingBag, ShoppingCart, Menu } from 'lucide-react-native';
 import React from 'react';
 
@@ -24,9 +24,9 @@ const Header = () => {
         </View>
 
         <View style={styles.iconsGroup}>
-          <TouchableOpacity style={styles.icon}> <User /> </TouchableOpacity>
-          <TouchableOpacity style={styles.icon}> <ShoppingBag /> </TouchableOpacity>
-          <TouchableOpacity style={styles.icon}> <ShoppingCart /> </TouchableOpacity>
+          <TouchableOpacity style={styles.icon}><User /></TouchableOpacity>
+          <TouchableOpacity style={styles.icon}><ShoppingBag /></TouchableOpacity>
+          <TouchableOpacity style={styles.icon}><ShoppingCart /></TouchableOpacity>
         </View>
       </View>
 
