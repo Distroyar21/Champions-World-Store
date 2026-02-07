@@ -1,39 +1,46 @@
 import { View, StyleSheet, ImageBackground, Text } from "react-native"
 
-const ProductCards = ({image, tag, category, title, rating, reviews, oldPrice, currentPrice, discount, stock
+const ProductCards = ({image, tag, category, title, rating, reviews, oldPrice, currentPrice, discount, stock, badgeColor = "#ff4d4d"
 }) => {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.image}
       source={{uri: image}} imageStyle={styles.corners}>
         <View style={styles.overlay}>
-          <View style={[styles.badge, styles.saleBadge]}>
+          {tag &&(
+          <View style={[styles.badge, {backgroundColor: badgeColor}]}>
             <Text style={styles.text}>{tag}</Text>
           </View>
+          )}
+
           {stock && (
-            <View style={[styles.badge, styles.stockBadge]}>
+            <View style={[styles.badge, {backgroundColor: badgeColor}]}>
               <Text style={styles.text}>{stock}</Text>
             </View>
           )}
         </View>
       </ImageBackground>
 
-      <View style={styles.details}>
-          <Text style={styles.category}>{category}</Text>
-          <Text style={styles.productName}>{title}</Text>
-      </View>
+      <View style={styles.content}>
+        <View style={styles.details}>
+            <Text style={styles.category}>{category}</Text>
+              <Text style={styles.productName}>{title}</Text>
+        </View>
 
-      <View style={styles.rating}>
-        <Text style={styles.stars}>★ ★ ★ ★ ☆</Text>
-        <Text style={styles.ratingValue}>{rating}</Text>
-        <Text style={styles.reviews}>({reviews})</Text>
-      </View>
+        <View style={styles.rating}>
+          <Text style={styles.stars}>★ ★ ★ ★ ☆</Text>
+          <View style={styles.customer}>
+            <Text style={styles.ratingValue}>{rating}</Text>
+            <Text style={styles.reviews}>({reviews})</Text>    
+          </View>
+        </View>
 
-      <View style={styles.priceSection}>
-        <Text style={styles.currentPrice}> {currentPrice}</Text>
-        <Text style={styles.originalPrice}> {oldPrice}</Text>
+        <View style={styles.priceSection}>
+          <Text style={styles.currentPrice}> {currentPrice}</Text>
+          <Text style={styles.originalPrice}> {oldPrice}</Text>
+          <Text style={styles.discount}>{discount}% off</Text>
+        </View>
       </View>
-      <Text style={styles.discount}>{discount}% off</Text>
     </View>
   )
 };
@@ -41,43 +48,43 @@ const ProductCards = ({image, tag, category, title, rating, reviews, oldPrice, c
 const styles = StyleSheet.create({
 
   container: {
+    flexDirection: 'row',
     backgroundColor: '#fff',
     marginHorizontal: 15,
     marginBottom: 20,
     borderRadius: 12,
-    shadowColor: '#000',
-    shadowRadius: 4,
     elevation: 3,
-    paddingBottom: 15
+    overflow: 'hidden',
   },
+
   image: {
-    width: '100%',
-    height: 260,
+    flex: 1,
+    minHeight: 200
   },
 
   corners: {
     borderTopLeftRadius: 12,
-    borderTopRightRadius: 12
+    borderBottomLeftRadius: 12,
+    resizeMode: 'cover'
+  },
+
+  content: {
+    flex: 1,
+    padding: 12,
+    justifyContent: 'space-between'
   },
 
   overlay:{
     flexDirection:'row',
     justifyContent: 'space-between',
-    padding: 15
+    padding: 8
   },
 
   badge: {
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 6,
     borderRadius: 20,
-  },
 
-  saleBadge: {
-    backgroundColor: '#ff4d4d',
-  },
-
-  stockBadge: {
-    backgroundColor: '#ff4d4d',
   },
 
   text: {
@@ -87,31 +94,35 @@ const styles = StyleSheet.create({
   },
 
   details: {
-    padding: 15,
-    marginLeft: 8,
+    paddingTop: 20,
+    alignItems: 'center'
   },
 
   category: {
     color: '#8e8e94',
     fontSize: 14,
-    marginBottom: 5
+    marginBottom: 5,
   },
 
   productName: {
-    fontSize: 18,
-    fontWeight: 400,
-    marginBottom: 8
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 4,
+    textAlign: 'center'
   },
 
   rating: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
-    marginBottom: 12,
-    marginLeft: 16
+    paddingRight: 20,
   },
   stars: {
     color: '#ffd700',
     fontSize: 18
+  },
+
+  customer: {
+    flexDirection: 'row',
   },
   ratingValue: {
     fontWeight:'bold',
@@ -124,26 +135,31 @@ const styles = StyleSheet.create({
 
   priceSection: {
     flexDirection: 'row',
-    alignItems: 'baseline',
-    marginLeft: 15
+    alignItems: 'center',
+    paddingLeft: 8,
+    paddingBottom: 10
   },
+
   currentPrice: {
-    fontSize: 24,
-    fontWeight: '500',
+    fontSize: 17,
+    fontWeight: '700',
     color: '#0345ec',
-    marginRight: 10
   },
+
   originalPrice: {
-    fontSize: 16,
+    fontSize: 13,
     color: '#8e8e93',
-    textDecorationLine: 'line-through'
+    textDecorationLine: 'line-through',
+    marginTop: 2,
+    marginLeft: 5
 
   },
   discount: {
     color: '#28a745',
+    fontSize: 12,
     fontWeight: 600,
     marginTop: 4,
-    marginLeft: 18,
+    marginLeft: 8,
   },
 });
 

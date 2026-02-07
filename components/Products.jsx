@@ -1,5 +1,6 @@
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import ProductCards from './ProductCards';
+import { MoveRight } from 'lucide-react-native';
 
 const Products = () => {
   return(
@@ -19,6 +20,7 @@ const Products = () => {
         reviews = "256"
         stock = "Only 3 left"
         tag="sale"
+        badgeColor="#e53935"
         image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
       />
 
@@ -31,6 +33,7 @@ const Products = () => {
         rating = "4.9"
         reviews = "428"
         tag="Bestseller"
+        badgeColor="#000"
         image="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400"
       />
 
@@ -101,8 +104,14 @@ const Products = () => {
         rating = "4.8"
         reviews = "321"
         tag="Bestseller"
+        color="#f2b51a"
         image="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=400"
       />
+
+      <View style={styles.allProducts}>
+        <Text style={styles.allProductsText}>View All Products </Text>
+        <MoveRight style={styles.arrow} color="#0345ec" strokeWidth={1.25} />
+      </View>
     </ScrollView>
     
   );
@@ -130,6 +139,22 @@ const styles = StyleSheet.create ({
     color: '#7d7a7a',
     marginTop: 8
   },
+
+  allProducts: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 30
+  },
+
+  allProductsText: {
+    fontSize:16,
+    color: '#0345ec',
+  }, 
+
+  arrow: {
+    marginLeft: 5,
+  }
 
 });
 
