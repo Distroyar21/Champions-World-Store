@@ -14,7 +14,7 @@ const DeliveryPolicy = () => {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.policyCards}>
+      <View>
         <SaleDelivery
         lucideIcon={<Truck size={36} color="#245bff" strokeWidth={1.75} />}
         shippingText={"Free Shipping"}
@@ -84,9 +84,7 @@ paddingTop: 50,
     color: '#fb8d10'
   },
 
-  policyCards: {
-    gap: -10
-  }
+
 });
 
 export default DeliveryPolicy;
