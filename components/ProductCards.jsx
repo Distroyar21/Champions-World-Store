@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 
   image: {
     flex: 1,
-    minHeight: 200
+    minHeight: 150
   },
 
   corners: {
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 
   priceSection: {
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent:'center',
     paddingLeft: 8,
     paddingBottom: 10
   },
