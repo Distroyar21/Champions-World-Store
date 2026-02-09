@@ -1,48 +1,56 @@
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const SaleDelivery = () => {
+const SaleDelivery = ({lucideIcon, shippingText, orderText}) => {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.saleContainer}>
-        <Text style={[styles.text, styles.text1]}>Winter Sale</Text>
-        <Text style={[styles.text, styles.text2]}>Up to 50% OFF on Selected Items</Text>
-        <Text style={[styles.text, styles.text3]}>Limited time offer Don't miss {"\n"}out!</Text>
+    
+      <View style={styles.deliveryComponent}>
+        <View style={styles.component}>
+          <View style={styles.lucideBtn}>
+            {lucideIcon}
+          </View>
+          <Text style={styles.freeShippingText}>{shippingText}</Text>
+          <Text style={styles.orderText}>{orderText}</Text>
+          </View>
       </View>
-    </ScrollView>
   )
 };
 
 const styles = StyleSheet.create({
-  container: {
-paddingTop: 50,
+  
+
+  deliveryComponent: {
+    marginTop: 10,
   },
 
-  saleContainer: {
-    flex: 1,
+  component: {
     alignItems: 'center',
-    backgroundColor: '#fb8d10',
-    margin: 15,
-    borderRadius: 15
+    backgroundColor: '#f5f5f5',
+    marginHorizontal: 20,
+    marginVertical: 10,
+    borderRadius: 12,
+    padding: 25,
   },
 
-  text: {
-    color: '#fff',
-    textAlign: 'center'
-  },
-  text1: {
-    marginTop: 30,
-    fontSize: 45,
-
-  },
-  text2: {
-    marginTop: 15,
-    fontSize: 30,
+  lucideBtn: {
+    backgroundColor: '#ccd9fa',
+    padding: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems:'center'
   },
 
-  text3: {
-    marginTop: 22,
-    fontSize: 18,
+  freeShippingText: {
+    marginTop: 18,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000'
   },
+
+  orderText: {
+    fontSize: 15,
+    marginTop: 13,
+  }
 });
 
 export default SaleDelivery;
