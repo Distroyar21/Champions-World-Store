@@ -144,7 +144,7 @@ const styles = StyleSheet.create ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 30
+    marginVertical: 15
   },
 
   allProductsText: {
