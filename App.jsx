@@ -5,6 +5,7 @@ import NavBar from './components/navBar';
 import ShopCards from './components/ShopCards';
 import Products from './components/Products';
 import DeliveryPolicy from './components/DeliveryPolicy';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <ShopCards />
         <Products />
         <DeliveryPolicy />
+        <Footer/>
     </ScrollView>
     </SafeAreaView>
   );  
