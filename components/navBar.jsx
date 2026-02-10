@@ -88,14 +88,15 @@ exploreText: {
 
   explorebtn: {
     backgroundColor: 'rgba(224, 223, 223, 0.7)',
-    paddingVertical: 17,
+    padding: 15,
     width: '60%',
     alignItems: 'center',
     borderRadius: 10,
     shadowColor: '#000',
     borderWidth: 1,
     borderColor: '#fff',
-    marginTop: 30
+    marginTop: 30,
+    marginLeft: 10
   },
 
   football: {
@@ -120,11 +121,11 @@ exploreText: {
   },
 
   arrowLeft: {
-    left: 10,
+    left: 8,
   },
 
   arrowRight: {
-    right: 10,
+    right: 8,
   },
 });
 
