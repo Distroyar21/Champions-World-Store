@@ -1,9 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { ChevronLeft, ChevronRight } from 'lucide-react-native';
+import ExploreSports from './ExploreSports';
+import React from 'react';
 
 const NavBar = () => {
+  const [showExplore, setShowExplore] = React.useState(false);
   return(
+
   <View style={styles.container}>
+    {showExplore ? (
+      <ExploreSports onClose={() => setShowExplore(false)}/>
+    ) : (
+
         <ImageBackground  style={styles.image}
           imageStyle={{ borderRadius: 15 }}
           source={{ uri: 'https://images.unsplash.com/photo-1517649763962-0c623066013b'}} >
@@ -18,7 +26,7 @@ const NavBar = () => {
               <Text style={styles.shopText}> Shop Now </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.explorebtn}>
+            <TouchableOpacity style={styles.explorebtn} onPress={() => setShowExplore(true)}>
               <Text style={styles.exploreText}> Explore Sports </Text>
             </TouchableOpacity>
           </View>
@@ -32,6 +40,7 @@ const NavBar = () => {
             <ChevronRight size={20} />
           </View>
         </ImageBackground>
+    )}
     </View>
   );
 };
@@ -64,7 +73,7 @@ image: {
   button: {
     flexDirection: 'column',
     marginTop: 15,
-    alignItems: 'start'
+    alignItems: 'flex-start'
   },
 
   shopbtn: {
