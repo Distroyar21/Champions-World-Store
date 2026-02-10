@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { ChevronLeft, ChevronRight } from 'lucide-react-native';
-import ExploreSports from './ExploreSports';
+import AllSports from './AllSports';
 import React from 'react';
 
 const NavBar = () => {
@@ -9,7 +9,7 @@ const NavBar = () => {
 
   <View style={styles.container}>
     {showExplore ? (
-      <ExploreSports onClose={() => setShowExplore(false)}/>
+      <AllSports onClose={() => setShowExplore(false)}/>
     ) : (
 
         <ImageBackground  style={styles.image}
