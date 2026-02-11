@@ -51,8 +51,9 @@ const Footer = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: '#0d132c',
-    marginTop: 40,
-    paddingLeft: 10
+    marginTop: 0,
+    paddingLeft: 10,
+    paddingTop: 40
   },
 
   container: {
