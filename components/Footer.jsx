@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { View, Text, StyleSheet, Image } from "react-native";
+import { Mail, Phone } from "lucide-react-native";
 
 const Footer = () => {
   return (
@@ -8,12 +8,12 @@ const Footer = () => {
         <Text style={styles.text1}>CHAMPIONS WORLD</Text>
         <Text style={styles.text2}>Premium sports gear for athletes of every level</Text>
         <View style={styles.iconContainer}>
-          <FontAwesome name="instagram" size={22} color="#ffffff" />
-          <FontAwesome name="twitter" size={22} color="#ffffff" />
-          <FontAwesome name="facebook" size={22} color="#ffffff" />
-          <FontAwesome name="youtube" size={22} color="#ffffff" />
+         <Image style={styles.socialIcon} source={require('../assets/facebook.png')}/>
+         <Image style={styles.socialIcon} source={require('../assets/twitter.png')}/>
+         <Image style={styles.socialIcon} source={require('../assets/instagram.png')}/>
+         <Image style={styles.socialIcon} source={require('../assets/youtube.png')}/>
         </View>
-      </View>
+      </View> 
 
       <View style={styles.shopSupport}>
         <View style={styles.shop}>
@@ -32,8 +32,16 @@ const Footer = () => {
       </View>
         <View style={styles.contact}>
           <Text style={styles.title}>Contact</Text>
-          <Text style={styles.text2}>championsworldChandrapur@gmail.com</Text>
-          <Text style={styles.text2}>+91 98765 XXXXX</Text>
+
+          <View style={styles.mailPhone}>
+            <Mail size={15} strokeWidth={1.75} style={styles.text2}/>
+            <Text style={styles.text2}>championsworldChandrapur@gmail.com</Text>
+          </View>
+          <View style={styles.mailPhone}>
+            <Phone style={styles.text2} size={15} strokeWidth={1.5} />
+            <Text style={styles.text2}>+91 98765 XXXXX</Text>
+          </View>
+          
         </View>
 
         <View style={styles.rightsContainer}>
@@ -65,11 +73,37 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18
   },
+  mailPhone: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5
+  },
   text2: {
     fontSize: 13,
     color: '#fff',
     marginTop: 6,
     fontWeight: '200',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5
+  },
+
+  socialIcon: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+    backgroundColor: '#0d132c',
+    borderRadius: 50,
+  },
+
+  mailIcon: {
+    color: '#fff',
+    fontSize: 5,
+    fontWeight: '200',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    paddingTop: 6
   },
 
   title: {

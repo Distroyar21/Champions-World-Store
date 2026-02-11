@@ -1,5 +1,5 @@
 import { StyleSheet, ScrollView, StatusBar } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { useState }from 'react';
 import Header from './components/Header';
 import NavBar from './components/navBar';
@@ -14,7 +14,7 @@ export default function App() {
   const [showExplore, setShowExplore] = useState(false);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaProvider style={styles.safeArea}>
       <StatusBar barStyle={'dark-content'} />
       <Header />
       {showExplore ?(
@@ -28,7 +28,7 @@ export default function App() {
         <Footer/>
     </ScrollView>
       )}
-    </SafeAreaView>
+    </SafeAreaProvider>
   );  
 }
 

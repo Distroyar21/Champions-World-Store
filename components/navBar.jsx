@@ -1,17 +1,33 @@
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
-import { ChevronLeft, ChevronRight } from 'lucide-react-native';
+import { StyleSheet, Text, ScrollView, View, TouchableOpacity, Dimensions, ImageBackground } from 'react-native';
 
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const NavBar = ({ onOpenExplore }) => {
+
+  const carouselData = [
+    { id: 1, title: 'FOOTBALL', uri: 'https://images.unsplash.com/photo-1517649763962-0c623066013b', desc: 'Gear up for match day with pro-level football kits' },
+    { id: 2, title: 'BASKETBALL', uri: 'https://images.unsplash.com/photo-1546519638-68e109498ffc', desc: 'Dominate the court with the latest basketball gear' },
+    { id: 3, title: 'CRICKET', uri: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da', desc: 'Premium bats and protective equipment for champions' },
+    { id: 4, title: 'TENNIS', uri: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0', desc: 'Professional rackets and apparel for every surface' },
+  ];
   return(
 
   <View style={styles.container}>
-        <ImageBackground  style={styles.image}
-          imageStyle={{ borderRadius: 15 }}  
-          source={{ uri: 'https://images.unsplash.com/photo-1517649763962-0c623066013b'}} >
+    <ScrollView 
+          horizontal 
+          pagingEnabled 
+          showsHorizontalScrollIndicator={false}
+        >
+          {carouselData.map((item) => (
+        <ImageBackground  
+          key={item.id}
+              style={styles.image}
+              imageStyle={{ borderRadius: 15 }}  
+              source={{ uri: item.uri }}
+          >
           <View style={styles.card}>
-            <Text style={styles.football}>FOOTBALL</Text>
+            <Text style={styles.football}>{item.title}</Text>
             <Text style={styles.description}>
-              Gear up for match day with pro-level football kits
+              {item.desc}
             </Text>
 
           <View style={styles.button}>
@@ -24,15 +40,9 @@ const NavBar = ({ onOpenExplore }) => {
             </TouchableOpacity>
           </View>
         </View>
-
-          <View style={[styles.arrow, styles.arrowLeft]}>
-            <ChevronLeft size={20} />
-          </View>
-
-          <View style={[styles.arrow, styles.arrowRight]}>
-            <ChevronRight size={20} />
-          </View>
         </ImageBackground>
+        ))}
+        </ScrollView>
     </View>
   );
 };
@@ -45,10 +55,12 @@ const styles = StyleSheet.create({
   },
 
 image: {
+  width: SCREEN_WIDTH - 30,
     justifyContent: 'center',
     padding: 10,
     alignItems: 'center',
-    height: 500
+    height: 450,
+    
   },
 
   card: {
@@ -56,7 +68,8 @@ image: {
     padding: 20,
     marginTop: 50,
     borderRadius: 12,
-    width: '95%',
+    width: '85%',
+    height: '60%',
     elevation: 5,
     shadowColor: '#000',
     shadowOpacity: 0.2
@@ -66,6 +79,11 @@ image: {
     flexDirection: 'column',
     marginTop: 15,
     alignItems: 'flex-start'
+  },
+
+  carouselWrapper: {
+    borderRadius: 15,
+    overflow: 'hidden',
   },
 
   shopbtn: {
@@ -111,22 +129,6 @@ exploreText: {
     fontSize: 14,
     fontWeight: '500',
     marginVertical: 8
-  },
-
-  arrow: {
-    position: 'absolute',
-    top: '50%',
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    padding: 5,
-  },
-
-  arrowLeft: {
-    left: 8,
-  },
-
-  arrowRight: {
-    right: 8,
   },
 });
 
