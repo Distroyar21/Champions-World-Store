@@ -16,11 +16,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle={'dark-content'} />
+      <Header />
       {showExplore ?(
         <AllSports onClose={() => setShowExplore(false)} />
       ): (
       <ScrollView style={styles.container}>
-        <Header />
         <NavBar onOpenExplore={() => setShowExplore(true)}/>
         <ShopCards />
         <Products />
