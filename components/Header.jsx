@@ -5,7 +5,7 @@ import LoginSignup from './LoginSignup';
 
 const {width, height} = Dimensions.get('window');
 
-const Header = () => {
+const Header = ({ onOpenExplore }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [loginSignup, setLoginSignup] = React.useState(false);
 
@@ -19,7 +19,10 @@ const Header = () => {
 
     {menuOpen && (
       <View style={styles.menuBar}>
-        <TouchableOpacity><Text style={styles.menuText}>All Sports</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          onOpenExplore();
+          setMenuOpen(false);
+        }}><Text style={styles.menuText}>All Sports</Text></TouchableOpacity>
         <TouchableOpacity><Text style={styles.menuText}>Men Collection</Text></TouchableOpacity>
         <TouchableOpacity><Text style={styles.menuText}>Women Collection</Text></TouchableOpacity>
         <TouchableOpacity><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
@@ -62,12 +65,13 @@ const styles = StyleSheet.create({
   borderBottomWidth: 1,
   borderBottomColor: '#eee',
   paddingTop: 20,
+  marginTop: 12,
   zIndex: 100
   },
 
   backdrop: {
     position: 'absolute',
-    top: 0,
+    top: 12,
     left: 0,
     width: width,
     height: height,
@@ -77,13 +81,12 @@ const styles = StyleSheet.create({
 
   menuBar: {
     position: 'absolute',
-    top: 140,
+  top: 160,
     left: 0,
     width: width,
     height: height * 0.36,
     backgroundColor: '#fff',
     zIndex: 1000,
-    paddingBottom: 20,
   },
 
   menuText: {

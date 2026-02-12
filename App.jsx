@@ -1,6 +1,6 @@
 import { StyleSheet, ScrollView, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import React, { useState }from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import NavBar from './components/navBar';
 import ShopCards from './components/ShopCards';
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <SafeAreaProvider style={styles.safeArea}>
       <StatusBar barStyle={'dark-content'} />
-      <Header />
+      <Header onOpenExplore={() => setShowExplore(true)} />
       {showExplore ?(
         <AllSports onClose={() => setShowExplore(false)} />
       ): (
