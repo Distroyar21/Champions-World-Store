@@ -28,7 +28,7 @@ const LoginSignup = ({onClose, visible}) => {
           <View style={styles.footer}>
             <Text style={styles.footerText}>Or Continue With</Text>
             <TouchableOpacity style={styles.gooleBtn}>
-              <Image style={styles.googleIcon} source={{uri:'https://www.google.com/imgres?q=unsplash%20google%20logo&imgurl=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fgoogle-logo_1273375-1572.jpg%3Fsemt%3Dais_hybrid%26w%3D740%26q%3D80&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fgoogle-logo&docid=yqSrMQ_lLcRCtM&tbnid=FK8uXYcl2i9m-M&vet=12ahUKEwiOqLrasdGSAxWwR2wGHRGLIyMQnPAOegQIMBAB..i&w=740&h=740&hcb=2&ved=2ahUKEwiOqLrasdGSAxWwR2wGHRGLIyMQnPAOegQIMBAB'}}/>
+              <Image style={styles.googleIcon} source={{uri:'https://cdn-icons-png.flaticon.com/512/2991/2991148.png'}}/>
               <Text style={styles.googleText}>Continue with Google</Text>
             </TouchableOpacity>
 
