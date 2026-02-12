@@ -102,11 +102,6 @@ const styles = StyleSheet.create({
   footerText: {
     color: '#545454'
   },
-
-  googleText: {
-   
-  },
-
   signUp: {
     flexDirection: 'row',
     marginTop: 10,
@@ -122,15 +117,15 @@ flexDirection: 'row',
     borderWidth: 1,
     borderColor: '#ddd',
     paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 8,
+    paddingHorizontal: 25,
+    borderRadius: 15,
     justifyContent: 'center',
   },
 
   googleIcon: {
     width: 20,
     height: 20,
-    marginRight: 10,
+    marginRight: 15,
   },
 
   googleText: {

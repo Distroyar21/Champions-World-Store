@@ -19,15 +19,18 @@ const Header = ({ onOpenExplore }) => {
 
     {menuOpen && (
       <View style={styles.menuBar}>
-        <TouchableOpacity onPress={() => {
-          onOpenExplore();
-          setMenuOpen(false);
-        }}><Text style={styles.menuText}>All Sports</Text></TouchableOpacity>
-        <TouchableOpacity><Text style={styles.menuText}>Men Collection</Text></TouchableOpacity>
-        <TouchableOpacity><Text style={styles.menuText}>Women Collection</Text></TouchableOpacity>
-        <TouchableOpacity><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
-        <TouchableOpacity><Text style={styles.menuText}>Accessories & Supporters</Text></TouchableOpacity>
-        <TouchableOpacity><Text style={styles.menuText}>Protein & Supplements</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            onOpenExplore('allSports');
+            setMenuOpen(false);
+          }}><Text style={styles.menuText}>All Sports</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            onOpenExplore('menCollection');
+            setMenuOpen(false);
+          }}><Text style={styles.menuText}>Men Collection</Text></TouchableOpacity>
+          <TouchableOpacity><Text style={styles.menuText}>Women Collection</Text></TouchableOpacity>
+          <TouchableOpacity><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
+          <TouchableOpacity><Text style={styles.menuText}>Accessories & Supporters</Text></TouchableOpacity>
+          <TouchableOpacity><Text style={styles.menuText}>Protein & Supplements</Text></TouchableOpacity>
       </View>
     )}
 

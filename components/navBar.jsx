@@ -49,7 +49,7 @@ const NavBar = ({ onOpenExplore }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    marginTop: 35,
     borderRadius: 15,
     padding: 15,
   },
