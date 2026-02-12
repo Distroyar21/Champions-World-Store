@@ -2,11 +2,11 @@ import { Text, View, StyleSheet, Dimensions, TouchableOpacity, Image, TextInput,
 import { X } from 'lucide-react-native';
 
 
-const {width, height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('screen');
 
 const LoginSignup = ({onClose, visible}) => {
   return (
-    <Modal visible={visible} transparent animationType='fade'>
+    <Modal visible={visible} transparent animationType='fade' statusBarTranslucent={true}>
       <View style={styles.container}>
         <View style={styles.loginContainer}>
         <View style={styles.header}>
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: width,
-    height: height,
-    backgroundColor: '#000',
+    height: height ,
+    backgroundColor: '#000000ff',
     justifyContent: 'center',
     alignItems: 'center'
   },
