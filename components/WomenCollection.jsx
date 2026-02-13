@@ -86,7 +86,7 @@ const WomenCollection = ({ onClose }) => {
           </View>
           <View style={styles.card}>
             <Image 
-              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4BjzunbCYsFobbeXK3iaQGp-DjKy8_VEksIcipqtuw&s' }} 
+              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShMqvIJ-A_Yh2_H0cFLuSnaKG_IiQxd1D74gLPQXlY3-wi7OXAX_5C7Vs&s' }} 
               style={styles.cardImage} 
             />
             <View style={styles.badgePosition}>

@@ -25,10 +25,10 @@ const styles = StyleSheet.create({
   component: {
     alignItems: 'center',
     backgroundColor: '#f5f5f5',
-    marginHorizontal: 20,
+    marginHorizontal: 30,
     marginVertical: 10,
     borderRadius: 12,
-    padding: 25,
+    padding: 15,
   },
 
   lucideBtn: {

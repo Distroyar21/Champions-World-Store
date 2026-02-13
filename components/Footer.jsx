@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#0d132c',
     marginTop: 0,
     paddingLeft: 10,
-    paddingTop: 40
+    paddingTop: 25
   },
 
   container: {
     alignItems: 'start',
-    paddingVertical: 25,
+    paddingVertical: 15,
   },
 
   text1: {

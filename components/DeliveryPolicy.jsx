@@ -51,7 +51,7 @@ paddingTop: 50,
     backgroundColor: '#fb8d10',
     margin: 20,
     borderRadius: 15,
-    paddingBottom: 40
+    paddingBottom: 30
   },
 
   text: {
