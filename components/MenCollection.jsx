@@ -30,8 +30,13 @@ const MenCollection = ({ onClose }) => {
             </View>
 
             <View style={styles.centeredOverlay}>
-              <Text style={styles.stackedTextMain}>MEN</Text>
-              <Text style={styles.stackedTextSub}>TOPWEAR</Text>
+              <TouchableOpacity onPress={() =>{
+                console.log("Men Topwear");
+              }}>
+                <X size={24} color={'#000000'} />
+                <Text style={styles.stackedTextMain}>MEN</Text>
+                <Text style={styles.stackedTextSub}>TOPWEAR</Text>
+              </TouchableOpacity>
             </View>
           </View>
         
