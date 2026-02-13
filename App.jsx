@@ -9,6 +9,8 @@ import DeliveryPolicy from './components/DeliveryPolicy';
 import Footer from './components/Footer';
 import AllSports from './components/AllSports';
 import MenCollection from './components/MenCollection';
+import WomenCollection from './components/WomenCollection';
+import KidsCollection from './components/KidsCollection';
 
 export default function App() {
 
@@ -25,6 +27,14 @@ export default function App() {
       
       {activeView === 'menCollection' && (
         <MenCollection onClose={() => setActiveView('home')} />
+      )}
+
+      {activeView === 'womenCollection' && (
+        <WomenCollection onClose={() => setActiveView('home')} />
+      )}
+
+      {activeView === 'kidsCollection' && (
+        <KidsCollection onClose={() => setActiveView('home')} />
       )}
 
       {activeView === 'home' && (

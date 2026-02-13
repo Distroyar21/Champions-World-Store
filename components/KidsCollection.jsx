@@ -2,11 +2,12 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "rea
 import { X } from "lucide-react-native";
 import Footer from "./Footer";
 
-const MenCollection = ({ onClose }) => {
+const KidsCollection = ({ onClose }) => {
+
   return (
     <View style={styles.screen}>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Men Collection</Text>
+        <Text style={styles.title}>Kids Collection</Text>
         <TouchableOpacity style={styles.closeButton} onPress={onClose}>
           <X size={28} color={'#000000'} />
         </TouchableOpacity>
@@ -20,17 +21,17 @@ const MenCollection = ({ onClose }) => {
         <View style={styles.content}>
           <View style={styles.card}>
             <Image 
-              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO3xbSvDlCyt14-7MQqJRkZqgVQMtPyL_NyNzM_mDtPA&s' }} 
+              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSu53dzM286932hZQM17Qsj0gB6fiuNuNW8g&s' }} 
               style={styles.cardImage} 
             />
             <View style={styles.badgePosition}>
                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>M</Text>
+                  <Text style={styles.badgeText}>K</Text>
                </View>
             </View>
 
             <View style={styles.centeredOverlay}>
-              <Text style={styles.stackedTextMain}>MEN</Text>
+              <Text style={styles.stackedTextMain}>KIDS</Text>
               <Text style={styles.stackedTextSub}>TOPWEAR</Text>
             </View>
           </View>
@@ -38,66 +39,63 @@ const MenCollection = ({ onClose }) => {
          
           <View style={styles.card}>
             <Image 
-              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShMqvIJ-A_Yh2_H0cFLuSnaKG_IiQxd1D74gLPQXlY3-wi7OXAX_5C7Vs&s' }} 
+              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8DYbgt6rvjyy8bJdgfmRn3rTxI6W2vmR1VA&s' }} 
               style={styles.cardImage} 
             />
             <View style={styles.badgePosition}>
                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>M</Text>
+                  <Text style={styles.badgeText}>K</Text>
                </View>
             </View>
           
             <View style={styles.centeredOverlay}>
-              <Text style={styles.stackedTextMain}>MEN</Text>
+              <Text style={styles.stackedTextMain}>KIDS</Text>
               <Text style={styles.stackedTextSub}>BOTTOMWEAR</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Image 
-              source={{ uri: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff' }} 
+              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSu53dzM286932hZQM17Qsj0gB6fiuNuNW8g&s' }} 
               style={styles.cardImage} 
             />
             <View style={styles.badgePosition}>
                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>M</Text>
+                  <Text style={styles.badgeText}>K</Text>
                </View>
             </View>
           
             <View style={styles.centeredOverlay}>
-              <Text style={styles.stackedTextMain}>MEN</Text>
-              <Text style={styles.stackedTextSub}>FOOTWEAR</Text>
+              <Text style={styles.stackedTextSub}>T-SHIRTS</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Image 
-              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsToGHOnjaUAzMOkyzOx9hEvU5rqaUvDQtfQ&s'}} 
+              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvufbQjFrU8VS75hu5WRrifqRBTMID0CfeAQ&s'}} 
               style={styles.cardImage} 
             />
             <View style={styles.badgePosition}>
                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>M</Text>
+                  <Text style={styles.badgeText}>K</Text>
                </View>
             </View>
           
             <View style={styles.centeredOverlay}>
-              <Text style={[styles.stackedTextMain, styles.stackedTextMain2]}>MEN</Text>
-              <Text style={styles.stackedTextSub}>JACKETS & TRACKSUITS</Text>
+              <Text style={styles.stackedTextSub}>SHORTS</Text>
             </View>
           </View>
           <View style={styles.card}>
             <Image 
-              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShMqvIJ-A_Yh2_H0cFLuSnaKG_IiQxd1D74gLPQXlY3-wi7OXAX_5C7Vs&s' }} 
+              source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT86ivENw5vAYpJfi633RwwDNbwULgUx_aqzA&s' }} 
               style={styles.cardImage} 
             />
             <View style={styles.badgePosition}>
                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>M</Text>
+                  <Text style={styles.badgeText}>K</Text>
                </View>
             </View>
           
             <View style={styles.centeredOverlay}>
-              <Text style={styles.stackedTextMain}>MEN</Text>
-              <Text style={styles.stackedTextSub}>INNERWEAR</Text>
+              <Text style={styles.stackedTextSub}>TRACK PANTS</Text>
             </View>
           </View>
         </View>
@@ -144,9 +142,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   card: {
-    width: '48%',
-    height: 150,
-    borderRadius: 20,
+    width: '45%',
+    height: 130,
+    borderRadius: 18,
     overflow: 'hidden',
     backgroundColor: '#fff',
     elevation: 5,
@@ -154,7 +152,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 10,
-    marginBottom: 15,
+    marginBottom: 13,
   },
   fullWidthCard: {
     width: '100%',
@@ -228,8 +226,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     letterSpacing: 1,
     textAlign: 'center',
-    
   }
 });
 
-export default MenCollection;
+export default KidsCollection;

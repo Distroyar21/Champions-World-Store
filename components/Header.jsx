@@ -27,8 +27,14 @@ const Header = ({ onOpenExplore }) => {
             onOpenExplore('menCollection');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Men Collection</Text></TouchableOpacity>
-          <TouchableOpacity><Text style={styles.menuText}>Women Collection</Text></TouchableOpacity>
-          <TouchableOpacity><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() =>{
+            onOpenExplore('womenCollection');
+            setMenuOpen(false);
+          }}><Text style={styles.menuText}>Women Collection</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() =>{
+            onOpenExplore('kidsCollection');
+            setMenuOpen(false);
+          }}><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
           <TouchableOpacity><Text style={styles.menuText}>Accessories & Supporters</Text></TouchableOpacity>
           <TouchableOpacity><Text style={styles.menuText}>Protein & Supplements</Text></TouchableOpacity>
       </View>
