@@ -35,8 +35,14 @@ const Header = ({ onOpenExplore }) => {
             onOpenExplore('kidsCollection');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
-          <TouchableOpacity><Text style={styles.menuText}>Accessories & Supporters</Text></TouchableOpacity>
-          <TouchableOpacity><Text style={styles.menuText}>Protein & Supplements</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            onOpenExplore('accessoriesSupporters');
+            setMenuOpen(false);
+          }}><Text style={styles.menuText}>Accessories & Supporters</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            onOpenExplore('proteinSupplements');
+            setMenuOpen(false);
+          }}><Text style={styles.menuText}>Protein & Supplements</Text></TouchableOpacity>
       </View>
     )}
 

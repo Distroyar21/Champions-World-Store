@@ -11,6 +11,8 @@ import AllSports from './components/AllSports';
 import MenCollection from './components/MenCollection';
 import WomenCollection from './components/WomenCollection';
 import KidsCollection from './components/KidsCollection';
+import ProteinSupplements from './components/Protein&Supplements';
+import AccessoriesSupporters from './components/Accessories&Spporters';
 
 export default function App() {
 
@@ -35,6 +37,14 @@ export default function App() {
 
       {activeView === 'kidsCollection' && (
         <KidsCollection onClose={() => setActiveView('home')} />
+      )}
+
+      {activeView === 'accessoriesSupporters' && (
+        <AccessoriesSupporters onClose={() => setActiveView('home')} />
+      )}
+
+      {activeView === 'proteinSupplements' && (
+        <ProteinSupplements onClose={() => setActiveView('home')} />
       )}
 
       {activeView === 'home' && (
