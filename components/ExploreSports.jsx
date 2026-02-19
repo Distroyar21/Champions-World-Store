@@ -1,7 +1,7 @@
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
 
-const ExploreSports = ({ title, data }) => {
+const ExploreSports = ({ title, data, onItemPress }) => {
 
   return (
       <View style={styles.sectionContainer}>
@@ -12,7 +12,11 @@ const ExploreSports = ({ title, data }) => {
         <View>
 
           {data.map((item, index) => (
-            <TouchableOpacity key={index} style={styles.sportItem}>
+            <TouchableOpacity 
+              key={index} 
+              style={styles.sportItem}
+              onPress={() => onItemPress && onItemPress(item)}
+            >
               <View style={styles.bulletPoint} />
               <Text style={styles.sportName}>{item.name.toUpperCase()}</Text>
             </TouchableOpacity>

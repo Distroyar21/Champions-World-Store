@@ -1,17 +1,17 @@
-import { Text, View, StyleSheet, Dimensions, TouchableOpacity, Image, TextInput, Modal } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, TouchableOpacity, Image, TextInput } from 'react-native';
 import { X } from 'lucide-react-native';
+import { useNavigation } from '@react-navigation/native';
 
 
 const {width, height} = Dimensions.get('screen');
-
-const LoginSignup = ({onClose, visible}) => {
+const LoginSignup = () => {
+  const navigation = useNavigation();
   return (
-    <Modal visible={visible} transparent animationType='fade' statusBarTranslucent={true}>
       <View style={styles.container}>
         <View style={styles.loginContainer}>
         <View style={styles.header}>
           <Text style={styles.text}>Sign In</Text>
-          <TouchableOpacity onPress={onClose}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <X size={24} color={'#000000'} />
           </TouchableOpacity>
         </View>
@@ -40,7 +40,6 @@ const LoginSignup = ({onClose, visible}) => {
           </View>
       </View>
     </View>
-    </Modal>
   )
 };
 

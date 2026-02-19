@@ -1,17 +1,20 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 import { X } from "lucide-react-native";
 import Footer from "./Footer";
+import { useNavigation } from "@react-navigation/native";
 
-const WomenCollection = ({ onClose }) => {
+const WomenCollection = () => {
+  const navigation = useNavigation();
+
+
   return (
     <View style={styles.screen}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Women Collection</Text>
-        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+        <TouchableOpacity style={styles.closeButton} onPress={() => navigation.goBack()}>
           <X size={28} color={'#000000'} />
         </TouchableOpacity>
       </View>
-
       <ScrollView 
         style={styles.scrollArea} 
         contentContainerStyle={styles.scrollContent}
@@ -35,7 +38,6 @@ const WomenCollection = ({ onClose }) => {
             </View>
           </View>
         
-         
           <View style={styles.card}>
             <Image 
               source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4BjzunbCYsFobbeXK3iaQGp-DjKy8_VEksIcipqtuw&s' }} 
@@ -116,10 +118,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: 45,
     paddingBottom: 10,
     backgroundColor: '#ffffff',
     paddingHorizontal: 15,
+
   },
   title: {
     fontSize: 24,

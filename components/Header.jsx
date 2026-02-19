@@ -1,18 +1,23 @@
 import {Image, StyleSheet, Pressable, View, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import {Search, User, ShoppingBag, ShoppingCart, Menu } from 'lucide-react-native';
 import React from 'react';
-import LoginSignup from './LoginSignup';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 const {width, height} = Dimensions.get('window');
 
-const Header = ({ onOpenExplore }) => {
+const Header = () => {
+
+  const navigation = useNavigation();
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const [loginSignup, setLoginSignup] = React.useState(false);
+
+
 
   return (
   <>
   
-    <LoginSignup visible={loginSignup} onClose={() => setLoginSignup(false)} />
+  
     {menuOpen &&(
       <Pressable style={styles.backdrop} onPress={() => setMenuOpen(false)} />
     )}
@@ -20,29 +25,32 @@ const Header = ({ onOpenExplore }) => {
     {menuOpen && (
       <View style={styles.menuBar}>
           <TouchableOpacity onPress={() => {
-            onOpenExplore('allSports');
+            navigation.navigate('AllSports');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>All Sports</Text></TouchableOpacity>
           <TouchableOpacity onPress={() => {
-            onOpenExplore('menCollection');
+            navigation.navigate('MenCollection');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Men Collection</Text></TouchableOpacity>
           <TouchableOpacity onPress={() =>{
-            onOpenExplore('womenCollection');
+            navigation.navigate('WomenCollection');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Women Collection</Text></TouchableOpacity>
           <TouchableOpacity onPress={() =>{
-            onOpenExplore('kidsCollection');
+            navigation.navigate('KidsCollection');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Kids Collection</Text></TouchableOpacity>
           <TouchableOpacity onPress={() => {
-            onOpenExplore('accessoriesSupporters');
+            navigation.navigate('AccessoriesSupporters');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Accessories & Supporters</Text></TouchableOpacity>
           <TouchableOpacity onPress={() => {
-            onOpenExplore('proteinSupplements');
+            navigation.navigate('ProteinSupplements');
             setMenuOpen(false);
           }}><Text style={styles.menuText}>Protein & Supplements</Text></TouchableOpacity>
+
+
+
       </View>
     )}
 
@@ -57,7 +65,9 @@ const Header = ({ onOpenExplore }) => {
         </View>
 
         <View style={styles.iconsGroup}>
-          <TouchableOpacity style={styles.icon} onPress={() =>setLoginSignup(!loginSignup)}><User /></TouchableOpacity>
+          <TouchableOpacity style={styles.icon} onPress={() => navigation.navigate('LoginSignup')}><User /></TouchableOpacity>
+
+
           <TouchableOpacity style={styles.icon}><ShoppingBag /></TouchableOpacity>
           <TouchableOpacity style={styles.icon}><ShoppingCart /></TouchableOpacity>
         </View>
@@ -79,10 +89,11 @@ const styles = StyleSheet.create({
   backgroundColor: '#fff',
   borderBottomWidth: 1,
   borderBottomColor: '#eee',
-  paddingTop: 20,
+  paddingTop: 40,
   marginTop: 12,
   zIndex: 100
   },
+
 
   backdrop: {
     position: 'absolute',
@@ -96,7 +107,7 @@ const styles = StyleSheet.create({
 
   menuBar: {
     position: 'absolute',
-  top: 160,
+  top: 180,
     left: 0,
     width: width,
     height: height * 0.36,

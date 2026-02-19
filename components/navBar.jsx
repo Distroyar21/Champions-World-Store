@@ -1,11 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity, Dimensions, ImageBackground } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+
+
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const CARD_WIDTH = SCREEN_WIDTH;
 const ITEM_FULL_WIDTH = CARD_WIDTH;
 
-const NavBar = ({ onOpenExplore }) => {
+const NavBar = () => {
+  const navigation = useNavigation();
+
+
+
   const scrollRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,7 +32,7 @@ const NavBar = ({ onOpenExplore }) => {
     const interval = setInterval(() => {
       let nextIndex = currentIndex + 1;
       
-      // Animate to the next slide (including the clone at the end)
+     
       scrollRef.current?.scrollTo({
         x: nextIndex * ITEM_FULL_WIDTH,
         animated: true,
@@ -66,7 +74,7 @@ const NavBar = ({ onOpenExplore }) => {
         decelerationRate="fast"
         onMomentumScrollEnd={handleScrollEnd}
       >
-        {carouselData.map((item, index) => (
+        {carouselData.map((item) => (
           <View key={item.id} style={styles.cardContainer}>
             <ImageBackground
               style={styles.image}
@@ -82,9 +90,12 @@ const NavBar = ({ onOpenExplore }) => {
                     <Text style={styles.shopText}> Shop Now </Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity style={styles.explorebtn} onPress={onOpenExplore}>
+                  <TouchableOpacity style={styles.explorebtn} onPress={() => navigation.navigate('AllSports')}>
+
+
                     <Text style={styles.exploreText}> Explore Sports </Text>
                   </TouchableOpacity>
+
                 </View>
               </View>
             </ImageBackground>

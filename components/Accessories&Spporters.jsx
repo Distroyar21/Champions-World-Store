@@ -1,13 +1,24 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { X } from "lucide-react-native";
+import { useNavigation } from "@react-navigation/native";
+
+
 import MenuProductComponents from "./MenuProductComponents";
 
-const AccessoriesSupporters = ({ onClose }) => {
+
+const AccessoriesSupporters = () => {
+  const navigation = useNavigation();
+
+
+
   return (
     <View style={styles.screen}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Accessories & Supporters</Text>
-        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+        <TouchableOpacity style={styles.closeButton} onPress={() => navigation.goBack()}>
+
+
+
           <X size={28} color={'#000000'} />
         </TouchableOpacity>
       </View>
@@ -39,10 +50,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: 45,
     paddingBottom: 8,
     backgroundColor: '#ffffff',
     paddingHorizontal: 15,
+
   },
   title: {
     fontSize: 22,

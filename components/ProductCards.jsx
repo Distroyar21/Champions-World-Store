@@ -1,9 +1,10 @@
-import { View, StyleSheet, ImageBackground, Text } from "react-native"
+import { View, StyleSheet, Text, ImageBackground } from 'react-native';
+import { ShoppingCart } from 'lucide-react-native';
 
-const ProductCards = ({image, tag, category, title, rating, reviews, oldPrice, currentPrice, discount, stock, badgeColor = "#ff4d4d"
+const ProductCards = ({image, tag, category, title, rating, reviews, oldPrice, currentPrice, discount, stock, badgeColor = "#ff4d4d", style, showCartIcon = false
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <ImageBackground style={styles.image}
       source={{uri: image}} imageStyle={styles.corners}>
         <View style={styles.overlay}>
@@ -32,6 +33,11 @@ const ProductCards = ({image, tag, category, title, rating, reviews, oldPrice, c
           <View style={styles.customer}>
             <Text style={styles.ratingValue}>{rating}</Text>
             <Text style={styles.reviews}>({reviews})</Text>    
+            {showCartIcon && (
+              <View style={styles.cartIconContainer}>
+                <ShoppingCart size={18} color="#fff" />
+              </View>
+            )}
           </View>
         </View>
 
@@ -131,6 +137,15 @@ const styles = StyleSheet.create({
   reviews: {
     color: '#8e8e93',
     marginLeft: 2
+  },
+  cartIconContainer: {
+    marginLeft: 10,
+    backgroundColor: '#0047faff',
+    width: 32,
+    height: 30,
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   priceSection: {
